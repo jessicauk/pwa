@@ -3,8 +3,8 @@ import { openDataBase } from './indexeddb';
 const request = openDataBase('Exceptions', 1);
 
 request.onsuccess = () => {
-  alert('success')
+  // alert('success')
 };
 request.onerror= () => {
-  alert('error')
+  // alert('error')
 };
