@@ -8,8 +8,7 @@ export function Counter() {
   const [counter, setCounter] = useState(0)
   const [counter2, setCounter2] = useState(100)
   const [person, setPerson] = useState(null)
-
-
+  
   useEffect(() => {
     // useEffect is called
     console.log('useEffect is called')
@@ -17,6 +16,7 @@ export function Counter() {
       // Called when component unmounts
     }
   },[counter])
+
 
   const getPerson = async () => {
     try {
@@ -31,8 +31,6 @@ export function Counter() {
   }
 
   useEffect(getPerson, [])
-
-
 
   const checkIDB = () => {
     checkIndexedDB();
