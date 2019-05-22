@@ -3,11 +3,29 @@ import React, { useState, useEffect } from 'react';
 import { checkIndexedDB } from '../../utils/indexeddb/indexeddb';
 import '../../utils/indexeddb/exceptions';
 
-export function Counter() {
+const Counter = (props) => {
   // Declare a new state variable, which we'll call "count"
   const [counter, setCounter] = useState(0)
   const [counter2, setCounter2] = useState(100)
   const [person, setPerson] = useState(null)
+
+  const getPerson = async () => {
+    try {
+      const response = await fetch('https://randomuser.me/api/?format=json');
+      console.log('resp', response);
+      const data = await response.json();
+      console.log('data', data)
+      /*const [item] = data;
+      console.log('item', item)
+      setPerson(item) */
+    } catch (error) {
+      console.log('Error', error)
+    }
+  }
+
+  useEffect(() => {
+    getPerson()
+  }, [])
   
   useEffect(() => {
     // useEffect is called
@@ -17,20 +35,6 @@ export function Counter() {
     }
   },[counter])
 
-
-  const getPerson = async () => {
-    try {
-      const response = await fetch('https://randomuser.me/');
-      const data = await response.json();
-      const [item] = data;
-      console.log('item', item)
-      setPerson(item)
-    } catch (error) {
-      console.log('Error', error)
-    }
-  }
-
-  useEffect(getPerson, [])
 
   const checkIDB = () => {
     checkIndexedDB();
@@ -68,3 +72,5 @@ export function Counter() {
     </div>
   );
 }
+
+export default Counter;
