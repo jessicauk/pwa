@@ -3,6 +3,8 @@
   "author": "Jessica Apolinar",
   "version": "0.1.0",
   "dependencies": {
+    "enzyme": "^3.10.0",
+    "immer": "^3.1.3",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-scripts": "2.1.5"
@@ -28,6 +30,7 @@
   "homepage": ".",
   "devDependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "jest": "^23.6.0"
   }
 }

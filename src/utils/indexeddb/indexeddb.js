@@ -5,7 +5,10 @@ export const checkIndexedDB = () => {
 }
 
 export const openDataBase = (namedb, version) => {
-  return window.indexedDB.open(namedb, version);
+  if (window.indexedDB) {
+    return window.indexedDB.open(namedb, version);
+  }
+  return {};
 }
 
 /*
