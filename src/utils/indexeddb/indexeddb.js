@@ -8,6 +8,7 @@ export const openDataBase = (namedb, version) => {
   if (window.indexedDB) {
     return window.indexedDB.open(namedb, version);
   }
+  return {};
 }
 
 /*

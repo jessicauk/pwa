@@ -10,3 +10,5 @@ if (request !== null && request !== undefined) {
     // alert('error')
   };
 }
+
+export default request
